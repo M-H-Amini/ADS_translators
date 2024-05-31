@@ -2,7 +2,7 @@
 
 This repository contains the code and datasets used in the paper "Bridging the Gap between Real-world and Synthetic Images for Testing Autonomous Driving Systems". The paper addresses the problem of existing gap between real-world and synthetic images in the context of testing autonomous driving systems (ADS). We propose a novel testing setup to mitigate this gap by leveraging deep learning methods.
 
-<img src="figs/fig.png" width="900">
+<img src="fig.png" width="900">
 
 ## Abstract
 
