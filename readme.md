@@ -38,7 +38,7 @@ If you use this code or the datasets in your research, please cite the following
 @inproceedings{paper,
 title = {Bridging the Gap between Real-world and Synthetic Images for Testing Autonomous Driving Systems},
 author = {Anonymous},  ##  Anonymous for double-blind review
-booktitle = {ISSTA},
+booktitle = {ASE},
 year = {2024},
 }
 ```
