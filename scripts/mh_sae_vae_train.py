@@ -26,7 +26,8 @@ if gpus:
         log.error(e)
 
 ##  Loading data...
-X_train, y_train, X_val, y_val, X_test, y_test = loadDataset('beamng')
+dataset = 'beamng'  ##  It should be `beamng`. Use `mnist` for a simple showcase...
+X_train, y_train, X_val, y_val, X_test, y_test = loadDataset(dataset)
 
 train = not True
 

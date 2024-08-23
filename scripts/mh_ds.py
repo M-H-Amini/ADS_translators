@@ -1,13 +1,8 @@
 import tensorflow as tf
-from tensorflow.keras.models import load_model
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import logging as log
-from mh_dave2_data import prepareDataset as prepareDatasetUdacity
-from mh_beamng_ds import prepareDataset as prepareDatasetBeamNG
-from git_dave2_model import loadModel as loadModelGit
-from functools import partial
 import tensorflow_datasets as tfds
 from tqdm import tqdm 
 import cv2
@@ -17,22 +12,14 @@ log.basicConfig(level=log.INFO, format='%(asctime)s - %(levelname)s - %(message)
  
 def loadDataset(dataset='udacity', resize=True):
     if dataset == 'udacity':
+        from mh_dave2_data import prepareDataset as prepareDatasetUdacity
         x_transform = lambda x: x / 255.
         X_train, y_train, X_val, y_val, X_test, y_test = prepareDatasetUdacity('ds_udacity' , test_size=0.1, val_size=0.1, random_state=28, x_transform=x_transform, show=False)
         return X_train, y_train, X_val, y_val, X_test, y_test
     elif dataset == 'beamng':
+        from mh_beamng_ds import prepareDataset as prepareDatasetBeamNG
         x_transform, y_transform = lambda x: x / 255., lambda y: y/0.11
         X_train, y_train, X_val, y_val, X_test, y_test = prepareDatasetBeamNG('ds_beamng', test_size=0.1, val_size=0.1, random_state=28, x_transform=x_transform, y_transform=y_transform, show=False)
-        return X_train, y_train, X_val, y_val, X_test, y_test
-    elif dataset == 'udacitybeamng':
-        X_train_u, y_train_u, X_val_u, y_val_u, X_test_u, y_test_u = loadDataset('udacity')
-        X_train_b, y_train_b, X_val_b, y_val_b, X_test_b, y_test_b = loadDataset('beamng')
-        X_train = np.concatenate((X_train_u, X_train_b), axis=0)
-        y_train = np.concatenate((y_train_u, y_train_b), axis=0)
-        X_val = np.concatenate((X_val_u, X_val_b), axis=0)
-        y_val = np.concatenate((y_val_u, y_val_b), axis=0)
-        X_test = X_test_b
-        y_test = y_test_b
         return X_train, y_train, X_val, y_val, X_test, y_test
     elif dataset == 'cycle':
         x_transform, y_transform = lambda x: x / 255., lambda y: y/0.11

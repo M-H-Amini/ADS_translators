@@ -11,7 +11,7 @@ from mh_ds import loadDataset
 log.basicConfig(level=log.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 ##  Loading data...
-ds_names = ['udacity', 'beamng']#, 'cats_vs_dogs']
+ds_names = ['udacity', 'beamng']
 ds = [loadDataset(ds_name) for ds_name in ds_names]
 ds = map(lambda x: np.concatenate((x[0], x[4]), axis=0), ds)  ##  Concatenate train and test sets
 ds = {ds_name: ds_ for ds_name, ds_ in zip(ds_names, ds)}
