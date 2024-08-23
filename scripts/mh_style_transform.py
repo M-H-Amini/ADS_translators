@@ -176,12 +176,12 @@ class MHStyler:
 
 
 if __name__ == '__main__':
-    mh_styler = MHStyler('img_udacity_0.png')
+    mh_styler = MHStyler('img_udacity_0.png')  ##  Loading data...
     img = plt.imread('img_beamng_0.png').copy()
     image_arr = mh_styler(img[np.newaxis, ...], 5)
     plt.imshow(image_arr)
     plt.show()
-    img = plt.imread('img_beamng_1.png').copy()
+    img = plt.imread('img_beamng_1.png').copy()  ##  Loading data...
     image_arr = mh_styler(img[np.newaxis, ...], 3)
     plt.imshow(image_arr)
     plt.show()
