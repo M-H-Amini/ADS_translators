@@ -78,13 +78,6 @@ def imshow(image, title=None):
 content_image = load_img(content_path)
 style_image = load_img(style_path)
 
-# plt.subplot(1, 2, 1)
-# imshow(content_image, 'Content Image')
-
-# plt.subplot(1, 2, 2)
-# imshow(style_image, 'Style Image')
-
-# plt.show()
 
 x = tf.keras.applications.vgg19.preprocess_input(content_image*255)
 x = tf.image.resize(x, (224, 224))

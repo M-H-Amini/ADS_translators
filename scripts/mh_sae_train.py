@@ -18,7 +18,8 @@ if gpus:
         log.error(e)
 
 ##  Loading data...
-X_train_u, y_train_u, X_val_u, y_val_u, X_test_u, y_test_u = loadDataset('beamng')
+ds_name = 'mnist'
+X_train_u, y_train_u, X_val_u, y_val_u, X_test_u, y_test_u = loadDataset(ds_name)
 
 ##  Building models...
 model_name = 'mh_sae_beamng'
