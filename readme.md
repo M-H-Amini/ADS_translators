@@ -37,10 +37,10 @@ This folder contains the scripts for reproducing the results in the paper.
 If you use this code or the datasets in your research, please cite the following paper:
 
 ```
-@inproceedings{paper,
+@inproceedings{amini_ase2024,
 title = {Bridging the Gap between Real-world and Synthetic Images for Testing Autonomous Driving Systems},
-author = {Anonymous},  ##  Anonymous for double-blind review
-booktitle = {ISSTA},
+authors = {Mohammad Hossein Amini, Shiva Nejati},
+booktitle = {Internation Conference on Automated Software Engineering (ASE)},
 year = {2024},
 }
 ```
