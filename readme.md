@@ -30,6 +30,11 @@ Deep Neural Networks (DNNs) for Autonomous Driving Systems (ADS) are typically t
 
 This folder contains the scripts for reproducing the results in the paper.
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+
 ## Citation
 
 If you use this code or the datasets in your research, please cite the following paper:
