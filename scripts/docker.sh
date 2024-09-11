@@ -4,4 +4,4 @@
 docker build -t mh_phd_works .
 
 # Run tensorflow docker...
-docker run -v ${PWD}:/usr/src/app/ --rm -it --ipc=host mh_phd_works bash -l
+docker run -v ${PWD}:/usr/src/app/ --rm -it mh_phd_works bash -l
