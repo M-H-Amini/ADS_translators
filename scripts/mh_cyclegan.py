@@ -443,14 +443,3 @@ class MHCycleGAN:
         X_hat = X_hat / X_hat.max()
         return X_hat
 
-if __name__ == "__main__":
-    img = plt.imread('img_beamng_0.png').copy()
-    mhg = MHCycleGAN()
-    X_hat = mhg(img)
-    print('X_hat: ', X_hat.shape, X_hat.min(), X_hat.max())
-    plt.figure()
-    plt.imshow(X_hat[0])
-    plt.savefig('temp.png')
-    plt.close()
-
-

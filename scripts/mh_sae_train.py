@@ -5,6 +5,7 @@ from mh_sae import MHAE
 from mh_utils import buildQ, buildP
 from mh_ds import loadDataset
 import logging as log
+import sys
 
 log.basicConfig(level=log.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -18,7 +19,8 @@ if gpus:
         log.error(e)
 
 ##  Loading data...
-ds_name = 'mnist'
+ds_name = sys.argv[1] if len(sys.argv) > 1 else 'mnist'
+# ds_name = 'mnist'
 X_train_u, y_train_u, X_val_u, y_val_u, X_test_u, y_test_u = loadDataset(ds_name)
 
 ##  Building models...
@@ -32,10 +34,10 @@ model_p = buildP()
 model_p.summary()
 
 ###  MHVAE model...
-model = MHAE(input_dim=(160, 320, 3), latent_dim=latent_dim, model_p=model_p, model_q=model_q, train_visualize=True)
+model = MHAE(input_dim=(160, 320, 3), latent_dim=latent_dim, model_p=model_p, model_q=model_q, train_visualize=False)
 model.compile(optimizer='adam', run_eagerly=True)
 # model.load_weights(f'{model_name}_weights.h5') if os.path.exists(f'{model_name}_weights.h5') else None
 log.info('\033[92m' + 'Model loaded!' + '\033[0m')
 model.fit(X_train_u, epochs=20, batch_size=32)
-model.generateGIF(f'{model_name}.gif')
+# model.generateGIF(f'{model_name}.gif')
 model.save_weights(f'{model_name}_weights.h5')
