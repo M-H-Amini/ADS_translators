@@ -21,10 +21,10 @@ Deep Neural Networks (DNNs) for Autonomous Driving Systems (ADS) are typically t
 
 ## Datasets
 
-- `ds_beamng`: Dataset for lane keeping task using the BeamNG ADS.
-- `udacity`: Public dataset for lane keeping task using the Udacity ADS (link in the paper).
-- `KITTI`: Public dataset for object detection task (link in the paper).
-- `vKITTI`: Public dataset for object detection task (link in the paper).
+- `ds_beamng`: Dataset for lane keeping task using the BeamNG ADS (Inside the `data` folder).
+- `udacity`: Public dataset for lane keeping task using the Udacity ADS [(Link)](https://www.kaggle.com/datasets/andy8744/udacity-self-driving-car-behavioural-cloning).
+- `KITTI`: Public dataset for object detection task [(Link)](https://www.cvlibs.net/datasets/kitti/).
+- `vKITTI`: Public dataset for object detection task [(Link)](https://europe.naverlabs.com/research/computer-vision/proxy-virtual-worlds-vkitti-1/).
 
 ## Scripts
 
