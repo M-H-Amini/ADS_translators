@@ -30,6 +30,9 @@ Deep Neural Networks (DNNs) for Autonomous Driving Systems (ADS) are typically t
 
 This folder contains the scripts for reproducing the results in the paper.
 
+##  Simulations
+In this paper, we utilized the BeamNG simulator for all experiments, following the setup provided by the SBFT competition. Detailed instructions on how to run this setup are available in the SBFT GitHub repository [Link](https://github.com/sbft-cps-tool-competition/cps-tool-competition).
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
