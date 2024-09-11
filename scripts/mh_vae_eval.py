@@ -40,7 +40,7 @@ def plotEvalHistogram(model, ds:dict, output_name=None, show=True):
 if __name__ == '__main__':
     log.basicConfig(level=log.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     ##  Loading data...
-    ds_names = ['udacity', 'beamng', 'saevae']#'magenta']#'saevae'] #'dclgan']
+    ds_names = ['udacity', 'beamng', 'saevae']
     ds = [loadDataset(ds_name) for ds_name in ds_names]
     ds = map(lambda x: np.concatenate((x[0], x[4]), axis=0), ds)
     ds = {ds_name: ds_ for ds_name, ds_ in zip(ds_names, ds)}

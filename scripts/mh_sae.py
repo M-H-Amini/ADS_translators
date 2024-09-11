@@ -134,8 +134,8 @@ if __name__ == '__main__':
     (X, _), (_, _) = load_data()
     X = X.reshape((-1, 784)) / 255.0
     ##  Create and train VAE...
-    sae = MHAE((784,), latent_dim=20, train_visualize=True)
+    sae = MHAE((784,), latent_dim=20, train_visualize=False)
     sae.compile(optimizer='adam', loss='mse', run_eagerly=True)
     sae.fit(X, epochs=10, batch_size=64)
     sae.save_weights('sae_weights_20d.h5')
-    sae.generateGIF()
+    # sae.generateGIF()

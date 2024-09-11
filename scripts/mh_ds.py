@@ -29,8 +29,8 @@ def loadDataset(dataset='udacity', resize=True):
         (X_train, y_train), (X_test, y_test) = tf.keras.datasets.mnist.load_data()
         X_train = np.concatenate((X_train[..., np.newaxis], X_train[..., np.newaxis], X_train[..., np.newaxis]), axis=-1)
         X_test = np.concatenate((X_test[..., np.newaxis], X_test[..., np.newaxis], X_test[..., np.newaxis]), axis=-1)
-        X_train = np.array([tf.image.resize(x, (66, 200)).numpy() / 255. for x in X_train])
-        X_test = np.array([tf.image.resize(x, (66, 200)).numpy() / 255. for x in X_test])
+        X_train = np.array([tf.image.resize(x, (160, 320)).numpy() / 255. for x in X_train])
+        X_test = np.array([tf.image.resize(x, (160, 320)).numpy() / 255. for x in X_test])
         return X_train, y_train, None, None, X_test, y_test
     elif dataset == 'cifar10':
         (X_train, y_train), (X_test, y_test) = tf.keras.datasets.cifar10.load_data()

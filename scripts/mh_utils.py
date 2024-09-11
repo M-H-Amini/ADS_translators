@@ -7,9 +7,9 @@ import tensorflow as tf
 import numpy as np
 import os
 
-def buildQ(latent_dim = 20, type_='vae'):
+def buildQ(latent_dim = 20, type_='vae', input_shape=(160, 320, 3)):
     ###  Q model (encoder)...
-    inp = tf.keras.layers.Input(shape=(160, 320, 3))
+    inp = tf.keras.layers.Input(shape=input_shape)
     x = tf.keras.layers.Conv2D(filters=32, kernel_size=3, strides=(2, 2), padding='same', activation='elu')(inp)
     x = tf.keras.layers.Conv2D(filters=64, kernel_size=3, strides=(2, 2), padding='same', activation='elu')(x)
     x = tf.keras.layers.Conv2D(filters=128, kernel_size=3, strides=(2, 2), padding='same', activation='elu')(x)

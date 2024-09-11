@@ -12,6 +12,7 @@ from mh_vae_eval import plotEvalHistogram
 import os
 from PIL import Image
 from tqdm import tqdm
+import sys 
 
 log.basicConfig(level=log.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -26,7 +27,7 @@ if gpus:
         log.error(e)
 
 ##  Loading data...
-dataset = 'mnist'  ##  It should be `beamng`. Use `mnist` for a simple showcase...
+dataset = sys.argv[1] if len(sys.argv) > 1 else 'mnist'  ##  It should be `beamng`. Use `mnist` for a simple showcase...
 X_train, y_train, X_val, y_val, X_test, y_test = loadDataset(dataset)
 
 train = not True

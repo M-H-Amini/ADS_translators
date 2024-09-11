@@ -1,0 +1,13 @@
+matplotlib
+pandas 
+tqdm
+tensorflow_addons
+tensorflow_datasets
+imageio
+seaborn
+jinja2
+scipy
+scikit-learn
+opencv-python
+openpyxl
+umap-learn
